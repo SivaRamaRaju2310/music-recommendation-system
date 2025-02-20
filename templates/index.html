@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Music Recommendation System 🎶</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full mx-auto p-6 bg-white bg-opacity-90 shadow-xl rounded-xl">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-6">🎵 Music Recommendation System 🎶</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label class="text-lg font-semibold text-gray-700">🎼 Select Genre:</label>
+                <select id="genre" class="p-3 border rounded-md text-gray-700 bg-gray-100 w-full">
+                    <option value="">🌍 Any</option>
+                    <option value="Pop">🎤 Pop</option>
+                    <option value="Rock">🎸 Rock</option>
+                    <option value="Jazz">🎷 Jazz</option>
+                    <option value="Hip-Hop">🎧 Hip-Hop</option>
+                    <option value="Classical">🎻 Classical</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="text-lg font-semibold text-gray-700">😊 Select Mood:</label>
+                <select id="mood" class="p-3 border rounded-md text-gray-700 bg-gray-100 w-full">
+                    <option value="">🌈 Any</option>
+                    <option value="Happy">😃 Happy</option>
+                    <option value="Sad">😢 Sad</option>
+                    <option value="Energetic">⚡ Energetic</option>
+                    <option value="Relaxing">🌿 Relaxing</option>
+                    <option value="Romantic">💖 Romantic</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-6">
+            <button onclick="getRecommendations()" class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-3 px-6 rounded-md font-semibold hover:scale-105 transform transition duration-300 shadow-lg">🔍 Get Recommendations</button>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-6 text-center">🎧 Recommended Songs 🎶</h2>
+        <div id="recommendations" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
